@@ -5,5 +5,7 @@
         <file>MyFooter.qml</file>
         <file>MyHeader.qml</file>
         <file>ChatBox.qml</file>
+        <file>Avatar.qml</file>
+        <file>Message.qml</file>
     </qresource>
 </RCC>
