@@ -12,7 +12,8 @@ ApplicationWindow {
     width: 480
     height: 720
     title: qsTr("Chkili")
-
+    maximumWidth: 480
+    maximumHeight: 720
 
     header : ToolBar {
         id : header
@@ -20,47 +21,72 @@ ApplicationWindow {
         topPadding: 5
         leftPadding: 12
         height : 55
-        MyHeader {
+        MyHeader {}
+    }
 
+    ColumnLayout{
+        anchors.fill: parent
+        Message {
+            id : message
+            message: "Ena Chakib"
+            name_sender: "Chakib"
+            //Layout.fillHeight: true
+            height: 100
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
+        }
+        Message {
+            //    color: "#80000000"
+            name_sender :"Walid"
+            message: "Lahy y3awnek"
+
+            height: 100
+            Layout.fillWidth: true
+            Layout.preferredWidth: 2
+        }
+        Message {
+            //   color: "blue"
+
+            name_sender :"Walid"
+            message: "terba7"
+            height: 100
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
+        }
+        Message {
+            //   color: "blue"
+            name_sender :"Walid"
+            message: "terba7"
+            height: 100
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
+        }
+
+        Message {
+            //   color: "blue"
+            name_sender :"Walid"
+            message: "terba7"
+            height: 100
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
+        }
+        Message {
+            //   color: "blue"
+            name_sender :"Walid"
+            message: "terba7"
+            height: 100
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
+        }
+        Message {
+            //   color: "blue"
+            name_sender :"Walid"
+            message: "terba7"
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
         }
     }
-    /*
-    ScrollView {
-        id: scroll
-        Material.background: "#363a3f"
-        anchors {
-            left: parent.left; right: parent.right
-            top: header.bottom; bottom: footer.top
-        }
-
-        ChatBox {
-
-        }*/
-
-
-        ColumnLayout{
-            id:layout
-            spacing: 0
-            anchors.fill: parent
-            Message {
-                id : mes
-                name_sender: "Chakib"
-                message: "sssssssssssssssssssssssssssssssssssssssssssss"
-
-            }
-
-            Message {
-                y:100
-                name_sender: "Chakib"
-                message: "ssssssssssssssss"
-            }
-            Message {
-                y: 200
-                name_sender: "Chakib"
-                message: "ssssssssssssssss"
-            }
-        }
-
 
     footer: ToolBar  {
         id : footer
