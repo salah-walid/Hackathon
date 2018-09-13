@@ -12,80 +12,48 @@ ApplicationWindow {
     width: 480
     height: 720
     title: qsTr("Chkili")
-    maximumWidth: 480
-    maximumHeight: 720
+    //maximumWidth: 600
+    //maximumHeight: 720
+    minimumWidth : 480
 
     header : ToolBar {
         id : header
         Material.background: "#1d2125"
-        topPadding: 5
+        topPadding: 15
         leftPadding: 12
-        height : 55
-        MyHeader {}
+        height : 60
+        MyHeader {
+            anchors.left: parent.left
+            anchors.right: parent.right
+        }
     }
 
-    ColumnLayout{
-        anchors.fill: parent
-        Message {
-            id : message
-            message: "Ena Chakib"
-            name_sender: "Chakib"
-            //Layout.fillHeight: true
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //    color: "#80000000"
-            name_sender :"Walid"
-            message: "Lahy y3awnek"
+    Drawer {
+        id: drawer
+        width: root.width * 0.66
+        height: root.height
+    }
 
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 2
-        }
-        Message {
-            //   color: "blue"
+    ScrollView{
+        id : msgArea
+        anchors.fill  : parent
+        ColumnLayout{
 
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
+            Repeater{
+                model : listModel
+                Message {
+                    id : message
 
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
+                    message: label
+                    name_sender: "Chakib"
+
+                }
+            }
         }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
+    }
+
+    ListModel{
+        id : listModel
     }
 
     footer: ToolBar  {

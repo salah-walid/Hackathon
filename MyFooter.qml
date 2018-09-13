@@ -9,6 +9,7 @@ Item {
         anchors.left: parent.left
         anchors.leftMargin: 5
 
+
         Image {
             source:"icon/push-pin.png"
             anchors.centerIn: add
@@ -23,6 +24,7 @@ Item {
         anchors.right : emoticon.left
         anchors.rightMargin: 5
         Material.accent: "#45b482"
+        placeholderText: qsTr("Send message")
     }
 
     ToolButton {
@@ -44,6 +46,14 @@ Item {
 
         anchors.right: parent.right
         anchors.rightMargin: 5
+
+        onClicked: {
+
+            if(textSend.text.length>0) {
+                listModel.append({"label": textSend.text})
+                textSend.clear()
+            }
+        }
 
         Image {
             source:"icon/send.png"
