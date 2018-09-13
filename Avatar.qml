@@ -2,14 +2,14 @@ import QtQuick 2.0
 
 Item {
 
-    height: 40
-    width : 40
+    height: 50
+    width : 50
 
     Image {
         id: im_avatar
         source: "icon/avatar.png"
 
-        height: 40
-        width : 40
+        height: 50
+        width : 50
     }
 }
