@@ -17,17 +17,22 @@ ApplicationWindow {
 
         }
     }
-
+    /*
     ScrollView {
         id: scroll
         anchors {
             left: parent.left; right: parent.right
             top: header.bottom; bottom: footer.top
         }
+
         ChatBox {
 
+        }*/
+        Message {
+            id :mess
+            name_sender: "Chakib"
+            message: "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
         }
-    }
 
     footer: ToolBar  {
         id : footer
