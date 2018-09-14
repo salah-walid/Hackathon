@@ -13,7 +13,7 @@ Item {
             anchors.centerIn: add
         }
 
-        font.pixelSize: Qt.application.font.pixelSize * 1.6
+        font.pixelSize: Qt.application.font.pixelSize * 2
     }
     TextField {
         id : textSend

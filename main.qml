@@ -17,7 +17,9 @@ ApplicationWindow {
     header : ToolBar {
         id : header
         Material.background: "#1d2125"
-
+        topPadding: 5
+        leftPadding: 12
+        height : 55
         MyHeader {
 
         }
@@ -37,6 +39,11 @@ ApplicationWindow {
 
     footer: ToolBar  {
         id : footer
+
+        topPadding: 5
+        height: 65
+        leftPadding: 12
+
         Material.background: "#1d2125"
         MyFooter {
             anchors.left: parent.left
