@@ -20,7 +20,7 @@ ApplicationWindow{
     //maximumHeight: 720
     minimumWidth : 480
 
-    header : ToolBar {
+    /*header : ToolBar {
         id : header
         Material.background: "#1d2125"
         topPadding: 15
@@ -36,7 +36,7 @@ ApplicationWindow{
         id: drawer
         width: root.width * 0.66
         height: root.height
-    }
+    }*/
 
     Item {
         id: item1
@@ -145,8 +145,8 @@ ApplicationWindow{
             Material.theme: Material.Dark
             Material.accent: "#45b482"
             text: qsTr("Remember Me?")
+            font.pixelSize: 12
             display: AbstractButton.TextOnly
-            font.pointSize:9
             anchors.top: rectangle3.bottom
             anchors.topMargin: 8
             anchors.left: rectangle3.left
@@ -172,7 +172,7 @@ ApplicationWindow{
             font.pixelSize: 12
             Material.foreground: "#45b482"
             onClicked: {
-                onLinkActivated: Qt.openUrlExternally("")
+                onLinkActivated: Qt.openUrlExternally("www.google.fr")
                 drawer.close()
             }
             
@@ -191,7 +191,17 @@ ApplicationWindow{
             anchors.top: text1.bottom
             anchors.topMargin: 6
             radius: 8
+            onClicked: {
+
+                pageLoader.source = "main.qml"
+
+            }
+
        }
+    }
+
+   StackView {
+        id: pageLoader
     }
 }
 
