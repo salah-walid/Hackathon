@@ -67,6 +67,8 @@ Item {
         anchors.right : videoCallIcon.left
         anchors.rightMargin: 5
 
+
+
         Image {
             source:"icon/call-answer.png"
             anchors.centerIn: callIcon

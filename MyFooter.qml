@@ -47,6 +47,14 @@ Item {
         anchors.right: parent.right
         anchors.rightMargin: 5
 
+        onClicked: {
+
+            if(textSend.text.length>0) {
+                listModel.append({"label": textSend.text})
+                textSend.clear()
+            }
+        }
+
         Image {
             source:"icon/send.png"
             anchors.centerIn: send

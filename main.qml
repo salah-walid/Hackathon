@@ -16,8 +16,6 @@ ApplicationWindow {
     //maximumHeight: 720
     minimumWidth : 480
 
-
-
     header : ToolBar {
         id : header
         Material.background: "#1d2125"
@@ -28,50 +26,35 @@ ApplicationWindow {
             anchors.left: parent.left
             anchors.right: parent.right
         }
-
-
     }
 
     Drawer {
         id: drawer
         width: root.width * 0.66
         height: root.height
-
-
     }
 
-
-
-    ColumnLayout{
+    ScrollView{
         id : msgArea
+        anchors.fill  : parent
+        ColumnLayout{
 
-        anchors.fill: parent
-        ListView{
-            id : colL
             Repeater{
-                model : 10
+                model : listModel
                 Message {
                     id : message
 
-                    message: "Ena Chakiùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùb"
+                    message: label
                     name_sender: "Chakib"
-                    //Layout.fillHeight: true
 
                 }
             }
-            ScrollBar.vertical: vbar
-        }
-
-
-        ScrollBar {
-            id: vbar
-            height: parent.height
-            anchors.right: parent.right
-            policy: ScrollBar.AlwaysOn
         }
     }
 
-
+    ListModel{
+        id : listModel
+    }
 
     footer: ToolBar  {
         id : footer

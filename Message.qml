@@ -9,11 +9,7 @@ Item {
     property date date_send: new Date()
     property string message: null
 
-    Layout.bottomMargin: 15
     height: 100
-    //Layout.rightMargin: 35
-    //Layout.fillWidth: true
-    //Layout.preferredWidth: 1
 
     Avatar {
         id : avatar
@@ -64,7 +60,6 @@ Item {
         }
         anchors.leftMargin: 10
         anchors.topMargin : 20
-
     }
 
     Rectangle{
