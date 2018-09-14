@@ -24,6 +24,7 @@ Item {
         anchors.right : emoticon.left
         anchors.rightMargin: 5
         Material.accent: "#45b482"
+        placeholderText: qsTr("Send message")
     }
 
     ToolButton {

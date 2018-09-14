@@ -12,18 +12,22 @@ ApplicationWindow {
     width: 480
     height: 720
     title: qsTr("Chkili")
-    maximumWidth: 480
-    maximumHeight: 720
+    //maximumWidth: 600
+    //maximumHeight: 720
+    minimumWidth : 480
 
 
 
     header : ToolBar {
         id : header
         Material.background: "#1d2125"
-        topPadding: 5
+        topPadding: 15
         leftPadding: 12
-        height : 55
-        MyHeader {}
+        height : 60
+        MyHeader {
+            anchors.left: parent.left
+            anchors.right: parent.right
+        }
 
 
     }
