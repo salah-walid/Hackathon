@@ -4,13 +4,7 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.1
 
-ApplicationWindow {
-    id :root
-    visible: true
-    width: 480
-    height: 720
-    title: qsTr("Chkili")
-
+Page {
     /*header : ToolBar {
         id : header
         Material.background: "#1d2125"

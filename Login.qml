@@ -6,6 +6,7 @@ import QtQuick.Controls.Material 2.1
 import QtQuick.Extras 1.4
 import Qt.labs.calendar 1.0
 import QtQuick.Controls 1.4 as Q1
+
 ApplicationWindow{
 
     Material.theme: Material.Dark
@@ -15,33 +16,14 @@ ApplicationWindow{
     visible: true
     width: 480
     height: 720
-    title: qsTr("Chkili")
-    //maximumWidth: 600
-    //maximumHeight: 720
+    title: qsTr("We care")
     minimumWidth : 480
-
-    /*header : ToolBar {
-        id : header
-        Material.background: "#1d2125"
-        topPadding: 15
-        leftPadding: 12
-        height : 60
-        LoginHeader {
-            anchors.left: parent.left
-            anchors.right: parent.right
-        }
-    }
-
-    Drawer {
-        id: drawer
-        width: root.width * 0.66
-        height: root.height
-    }*/
 
     Item {
         id: item1
         y: 139
         height: 429
+        anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
@@ -192,16 +174,26 @@ ApplicationWindow{
             anchors.topMargin: 6
             radius: 8
             onClicked: {
-
-                pageLoader.source = "main.qml"
-
+                stack.push("HomePage.qml")
             }
 
        }
     }
 
-   StackView {
-        id: pageLoader
-    }
+    StackView {
+           id: stack
+           anchors.fill: parent
+           focus:true
+           initialItem: item1
+
+           Keys.onBackPressed:{
+               if(stack.depth>1){
+                   pop()
+                   labelToolBar.text =qsTr("Main");
+               }else{
+                   Qt.quit()
+               }
+           }
+       }
 }
 
