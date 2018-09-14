@@ -6,5 +6,6 @@
         <file>MyHeader.qml</file>
         <file>Avatar.qml</file>
         <file>Message.qml</file>
+        <file>WebSocket.qml</file>
     </qresource>
 </RCC>
