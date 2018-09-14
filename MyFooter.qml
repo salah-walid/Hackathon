@@ -9,6 +9,7 @@ Item {
         anchors.left: parent.left
         anchors.leftMargin: 5
 
+
         Image {
             source:"icon/push-pin.png"
             anchors.centerIn: add

@@ -11,9 +11,15 @@ Item {
 
 
         ToolButton {
+            onClicked: {
+
+                drawer.open()
+
+            }
             Image {
                 source:"icon/menu.png"
                 anchors.centerIn: toolButton
+
             }
 
 
@@ -21,20 +27,39 @@ Item {
             font.pixelSize: Qt.application.font.pixelSize * 1.8
         }
 
-       Text {
-           font.pixelSize: 30
-           Layout.leftMargin: 20
-           //font.bold : true
-           font.styleName: "Calibri"
-           text : "Talking to "
-           color: "#505358"
-       }
-       Text {
-           font.pixelSize: 30
-           //font.bold: true
-           font.styleName: "Calibri"
-           text : "Dr.Abdesslam"
-           color: "#45b482"
-       }
+        Text {
+            font.pixelSize: 20
+            Layout.leftMargin: 20
+            //font.bold : true
+            font.styleName: "Calibri"
+            text : "Talking to "
+            color: "#505358"
+        }
+        Text {
+            font.pixelSize: 20
+            //font.bold: true
+            font.styleName: "Calibri"
+            text : "Dr.Abdesslam"
+            color: "#45b482"
+        }
+
+        ToolButton {
+
+            Image {
+                source:"icon/call-answer.png"
+                anchors.centerIn: toolButton
+
+            }
+        }
+
+        ToolButton {
+
+            Image {
+                source:"icon/video-camera.png"
+                anchors.centerIn: toolButton
+
+            }
+        }
+
     }
 }

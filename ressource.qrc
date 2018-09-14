@@ -6,5 +6,7 @@
         <file alias="push-pin.png">icon/push-pin.png</file>
         <file alias="emoticon.png">icon/emoticon.png</file>
         <file alias="avatar.png">icon/avatar.png</file>
+        <file alias="call-answer.png">icon/call-answer.png</file>
+        <file alias="video-camera.png">icon/video-camera.png</file>
     </qresource>
 </RCC>

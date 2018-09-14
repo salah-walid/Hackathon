@@ -15,6 +15,8 @@ ApplicationWindow {
     maximumWidth: 480
     maximumHeight: 720
 
+
+
     header : ToolBar {
         id : header
         Material.background: "#1d2125"
@@ -22,7 +24,18 @@ ApplicationWindow {
         leftPadding: 12
         height : 55
         MyHeader {}
+
+
     }
+
+    Drawer {
+        id: drawer
+        width: root.width * 0.66
+        height: root.height
+
+
+    }
+
 
     ColumnLayout{
         anchors.fill: parent
@@ -86,6 +99,7 @@ ApplicationWindow {
             Layout.fillWidth: true
             Layout.preferredWidth: 1
         }
+
     }
 
     footer: ToolBar  {
