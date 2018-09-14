@@ -41,70 +41,37 @@ ApplicationWindow {
     }
 
 
+
     ColumnLayout{
+        id : msgArea
+
         anchors.fill: parent
-        Message {
-            id : message
-            message: "Ena Chakib"
-            name_sender: "Chakib"
-            //Layout.fillHeight: true
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //    color: "#80000000"
-            name_sender :"Walid"
-            message: "Lahy y3awnek"
+        ListView{
+            id : colL
+            Repeater{
+                model : 10
+                Message {
+                    id : message
 
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 2
-        }
-        Message {
-            //   color: "blue"
+                    message: "Ena Chakiùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùb"
+                    name_sender: "Chakib"
+                    //Layout.fillHeight: true
 
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
+                }
+            }
+            ScrollBar.vertical: vbar
         }
 
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
 
+        ScrollBar {
+            id: vbar
+            height: parent.height
+            anchors.right: parent.right
+            policy: ScrollBar.AlwaysOn
+        }
     }
+
+
 
     footer: ToolBar  {
         id : footer

@@ -9,6 +9,12 @@ Item {
     property date date_send: new Date()
     property string message: null
 
+    Layout.bottomMargin: 15
+    height: 100
+    //Layout.rightMargin: 35
+    //Layout.fillWidth: true
+    //Layout.preferredWidth: 1
+
     Avatar {
         id : avatar
 
@@ -28,8 +34,11 @@ Item {
         font.pointSize: 15
         anchors {
             left: avatar.right; top : parent.top
-            margins:  10
+
+            right : parent.right
         }
+
+
     }
 
     Text {
@@ -46,25 +55,26 @@ Item {
     Text {
         id : message_sender
         text : message
-        wrapMode: Text.WordWrap
+        wrapMode: Text.WrapAnywhere
+        width : msgArea.width - 150
         font.pointSize: 13
-        width: parent.width
         color : "#ebebec"
         anchors {
             left: avatar.right; top : text_date.bottom
         }
         anchors.leftMargin: 10
-        anchors.topMargin : 15
+        anchors.topMargin : 20
+
     }
 
     Rectangle{
-        width: parent.width
+        width: msgArea.width
         height: 2
         color: "#363a3f"
 
         anchors {
             top : message_sender.bottom
-            margins: 10
+            topMargin: 10
         }
     }
 }
