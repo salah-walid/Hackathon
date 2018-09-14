@@ -40,6 +40,14 @@ ApplicationWindow {
         height: root.height
     }
 
+    function nameSenderMessage () {
+        if(have_send_receiver) {
+            return  pseudo_receiver
+        } else {
+            return pseudo
+        }
+    }
+
     ScrollView{
         id : msgArea
         anchors.fill  : parent
@@ -49,30 +57,30 @@ ApplicationWindow {
                 model : listModel
                 Message {
                     id : message
-
-                    message: label
+                    message: contentMessage
                     name_sender: pseudo
-
                 }
+
             }
         }
     }
 
-    ListModel{
-        id : listModel
+
+ListModel{
+    id : listModel
+}
+
+footer: ToolBar  {
+    id : footer
+
+    topPadding: 5
+    height: 65
+    leftPadding: 12
+
+    Material.background: "#1d2125"
+    MyFooter {
+        anchors.left: parent.left
+        anchors.right: parent.right
     }
-
-    footer: ToolBar  {
-        id : footer
-
-        topPadding: 5
-        height: 65
-        leftPadding: 12
-
-        Material.background: "#1d2125"
-        MyFooter {
-            anchors.left: parent.left
-            anchors.right: parent.right
-        }
-    }
+}
 }

@@ -6,16 +6,15 @@ WebSocket {
     active: true
     onTextMessageReceived: {
         var JsonObject= JSON.parse(message);
-        pseudo = JsonObject.pseudo
-        listModel.append({"label": JsonObject.message})
+        listModel.append({"contentMessage": JsonObject.message, "pseudo":JsonObject.pseudo})
     }
     onStatusChanged: {
         if (socket.status == WebSocket.Error) {
             console.log("Error: " + socket.errorString)
         } else if (socket.status == WebSocket.Open) {
-            socket.sendTextMessage("je suis connecter")
+           console.log("Connected")
         } else if (socket.status == WebSocket.Closed) {
-            console.log("close ")
+            console.log("Close")
         }
     }
 }
