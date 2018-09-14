@@ -12,6 +12,8 @@ ApplicationWindow {
     width: 480
     height: 720
     title: qsTr("Chkili")
+
+    property string pseudo: "Yacine"
     //maximumWidth: 600
     //maximumHeight: 720
     minimumWidth : 480
@@ -26,6 +28,10 @@ ApplicationWindow {
             anchors.left: parent.left
             anchors.right: parent.right
         }
+    }
+
+    WebSocket {
+        id : socket
     }
 
     Drawer {
@@ -45,7 +51,7 @@ ApplicationWindow {
                     id : message
 
                     message: label
-                    name_sender: "Chakib"
+                    name_sender: pseudo
 
                 }
             }
