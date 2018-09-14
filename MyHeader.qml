@@ -23,13 +23,16 @@ Item {
 
        Text {
            font.pixelSize: 30
-           font.bold : true
+           Layout.leftMargin: 20
+           //font.bold : true
+           font.styleName: "Calibri"
            text : "Talking to "
            color: "#505358"
        }
        Text {
            font.pixelSize: 30
-           font.bold: true
+           //font.bold: true
+           font.styleName: "Calibri"
            text : "Dr.Abdesslam"
            color: "#45b482"
        }
