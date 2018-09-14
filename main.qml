@@ -36,10 +36,11 @@ ApplicationWindow {
         ChatBox {
 
         }*/
+
         Message {
-            id :mess
+            y :40
             name_sender: "Chakib"
-            message: "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+            message: "ssssssssssssssss"
         }
 
     footer: ToolBar  {

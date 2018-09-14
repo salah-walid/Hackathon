@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
+
 Item {
     property string name_sender: null
     property date date_send: new Date()
@@ -56,7 +57,7 @@ Item {
     }
 
     Rectangle{
-        width: parent.width
+        width: parent.parent.width
         height: 2
         color: "#728ad7"
 
