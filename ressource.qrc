@@ -3,5 +3,7 @@
         <file alias="menu.png">icon/menu.png</file>
         <file alias="plus.png">icon/plus.png</file>
         <file alias="send.png">icon/send.png</file>
+        <file alias="push-pin.png">icon/push-pin.png</file>
+        <file alias="emoticon.png">icon/emoticon.png</file>
     </qresource>
 </RCC>

@@ -9,9 +9,9 @@ ApplicationWindow {
 
     id :root
     visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
+    width: 480
+    height: 720
+    title: qsTr("Chkili")
 
 
     header : ToolBar {

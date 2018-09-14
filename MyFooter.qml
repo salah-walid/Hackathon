@@ -9,7 +9,8 @@ Item {
         anchors.leftMargin: 5
 
         Image {
-            source:"icon/plus.png"
+            source:"icon/push-pin.png"
+            anchors.centerIn: add
         }
 
         font.pixelSize: Qt.application.font.pixelSize * 1.6
@@ -18,8 +19,21 @@ Item {
         id : textSend
         anchors.left: add.right
         anchors.leftMargin: 5
-        anchors.right : send.left
+        anchors.right : emoticon.left
         anchors.rightMargin: 5
+    }
+
+    ToolButton {
+
+        id : emoticon
+
+        anchors.right: send.left
+        anchors.rightMargin: 5
+
+        Image {
+            source:"icon/emoticon.png"
+            anchors.centerIn: emoticon
+        }
     }
 
     ToolButton {
@@ -31,7 +45,9 @@ Item {
 
         Image {
             source:"icon/send.png"
+            anchors.centerIn: send
         }
     }
+
 }
 

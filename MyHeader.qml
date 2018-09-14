@@ -13,6 +13,7 @@ Item {
         ToolButton {
             Image {
                 source:"icon/menu.png"
+                anchors.centerIn: toolButton
             }
 
 
@@ -21,8 +22,16 @@ Item {
         }
 
        Text {
-           text : "Consultation"
-           color: "white"
+           font.pixelSize: 30
+           font.bold : true
+           text : "Talking to "
+           color: "#505358"
+       }
+       Text {
+           font.pixelSize: 30
+           font.bold: true
+           text : "Dr.Abdesslam"
+           color: "#45b482"
        }
     }
 }
