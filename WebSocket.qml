@@ -2,12 +2,12 @@ import QtQuick 2.0
 import QtWebSockets 1.1
 
 WebSocket {
-    id: socket
     url: "ws://192.168.43.235:9090"
     active: true
     onTextMessageReceived: {
-        listModel.append({"label": message})
-
+        var JsonObject= JSON.parse(message);
+        pseudo = JsonObject.pseudo
+        listModel.append({"label": JsonObject.message})
     }
     onStatusChanged: {
         if (socket.status == WebSocket.Error) {
