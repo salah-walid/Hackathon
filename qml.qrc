@@ -6,6 +6,9 @@
         <file>MyHeader.qml</file>
         <file>Avatar.qml</file>
         <file>Message.qml</file>
+        <file>login.qml</file>
+        <file>LoginHeader.qml</file>
+        <file>HomePage.qml</file>
         <file>WebSocket.qml</file>
     </qresource>
 </RCC>

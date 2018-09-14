@@ -3,7 +3,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.1
-//import "loginHeader.qml"
+import "loginHeader.qml"
 import QtQuick.Extras 1.4
 import Qt.labs.calendar 1.0
 import QtQuick.Controls 1.4 as Q1
@@ -173,7 +173,7 @@ ApplicationWindow{
             font.pixelSize: 12
             Material.foreground: "#45b482"
             onClicked: {
-                onLinkActivated: Qt.openUrlExternally("https://www.facebook.com/Dzenia-682593615418180/")
+                onLinkActivated: Qt.openUrlExternally("")
                 drawer.close()
             }
             
@@ -193,8 +193,6 @@ ApplicationWindow{
             anchors.topMargin: 6
             radius: 8
        }
-
-
     }
-
 }
+
