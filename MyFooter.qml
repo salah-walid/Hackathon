@@ -6,16 +6,17 @@ import QtQuick.Controls.Material 2.2
 Item {
     ToolButton {
         id : add
+
         anchors.left: parent.left
-        anchors.leftMargin: 5
+        anchors.leftMargin: 0.5
 
-
+        //anchors.centerIn: : parent.
         Image {
             source:"icon/push-pin.png"
             anchors.centerIn: add
+            height: 20
+            width: 25
         }
-
-        font.pixelSize: Qt.application.font.pixelSize * 2
     }
     TextField {
         id : textSend
@@ -30,13 +31,14 @@ Item {
     ToolButton {
 
         id : emoticon
-
         anchors.right: send.left
         anchors.rightMargin: 5
 
         Image {
             source:"icon/emoticon.png"
             anchors.centerIn: emoticon
+            height: 20
+            width: 25
         }
     }
 
@@ -47,9 +49,19 @@ Item {
         anchors.right: parent.right
         anchors.rightMargin: 5
 
+        onClicked: {
+
+            if(textSend.text.length>0) {
+                listModel.append({"label": textSend.text})
+                textSend.clear()
+            }
+        }
+
         Image {
             source:"icon/send.png"
             anchors.centerIn: send
+            height: 20
+            width: 25
         }
     }
 

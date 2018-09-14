@@ -16,8 +16,6 @@ ApplicationWindow {
     //maximumHeight: 720
     minimumWidth : 480
 
-
-
     header : ToolBar {
         id : header
         Material.background: "#1d2125"
@@ -28,82 +26,34 @@ ApplicationWindow {
             anchors.left: parent.left
             anchors.right: parent.right
         }
-
-
     }
 
     Drawer {
         id: drawer
         width: root.width * 0.66
         height: root.height
-
-
     }
 
+    ScrollView{
+        id : msgArea
+        anchors.fill  : parent
+        ColumnLayout{
 
-    ColumnLayout{
-        anchors.fill: parent
-        Message {
-            id : message
-            message: "Ena Chakib"
-            name_sender: "Chakib"
-            //Layout.fillHeight: true
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //    color: "#80000000"
-            name_sender :"Walid"
-            message: "Lahy y3awnek"
+            Repeater{
+                model : listModel
+                Message {
+                    id : message
 
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 2
-        }
-        Message {
-            //   color: "blue"
+                    message: label
+                    name_sender: "Chakib"
 
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
+                }
+            }
         }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
+    }
 
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            height: 100
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-        Message {
-            //   color: "blue"
-            name_sender :"Walid"
-            message: "terba7"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            Layout.preferredWidth: 1
-        }
-
+    ListModel{
+        id : listModel
     }
 
     footer: ToolBar  {
