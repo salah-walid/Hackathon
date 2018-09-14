@@ -43,7 +43,11 @@ Item {
     }
 
     function makejSONFromString (messageSend) {
-        return "{\"pseudo\" : \""+pseudo+"\","+"\"message\" : \""+messageSend+"\"}" ;
+        return JSON.stringify({
+                                  pseudo: pseudo,
+                                  message: messageSend
+                              });
+//        return "{\"pseudo\" : \""+pseudo+"\","+"\"message\" : \""+messageSend+"\"}" ;
     }
 
     ToolButton {
@@ -56,7 +60,7 @@ Item {
         onClicked: {
 
             if(textSend.text.length>0) {
-                listModel.append({"label": textSend.text})
+                listModel.append({"contentMessage": textSend.text,"pseudo": pseudo})
                 socket.sendTextMessage(makejSONFromString(textSend.text))
                 console.log(makejSONFromString(textSend.text))
                 textSend.clear()
