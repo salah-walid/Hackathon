@@ -9,19 +9,17 @@ import QtQuick.Controls 1.4 as Q1
 
 ApplicationWindow{
 
-    Material.theme: Material.Dark
-    Material.accent: Material.Purple
-
     id :root
     visible: true
     width: 480
     height: 720
     title: qsTr("We care")
-    minimumWidth : 480
+
+    Material.theme: Material.Dark
+    Material.accent: Material.Purple
 
     Item {
-        id: item1
-        y: 139
+        id: item_login
         height: 429
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
@@ -42,7 +40,7 @@ ApplicationWindow{
         }
 
         Rectangle {
-            id: rectangle2
+            id: rect_username
             width: 300
             height: 46
             color: "#1d2125"
@@ -53,7 +51,7 @@ ApplicationWindow{
             Layout.topMargin: 40
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             TextField {
-                id: textField2
+                id: username
                 text: qsTr("")
                 renderType: Text.QtRendering
                 anchors.fill: parent
@@ -70,7 +68,7 @@ ApplicationWindow{
             }
 
             Image {
-                id: image2
+                id: icon_username
                 y: 4
                 width: 30
                 height: 30
@@ -83,18 +81,18 @@ ApplicationWindow{
         }
 
         Rectangle {
-            id: rectangle3
+            id: rectangle_passord
             x: 4
             width: 300
             height: 46
             color: "#1d2125"
             radius: 15
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: rectangle2.bottom
+            anchors.top: rect_username.bottom
             anchors.topMargin: 15
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             TextField {
-                id: textField3
+                id: password
                 text: qsTr("")
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
@@ -108,7 +106,7 @@ ApplicationWindow{
             }
 
             Image {
-                id: image3
+                id: icon_password
                 y: 4
                 width: 30
                 height: 30
@@ -121,7 +119,7 @@ ApplicationWindow{
         }
 
         CheckBox {
-            id: checkBox1
+            id: rememberMe
             width: 130
             height: 32
             Material.theme: Material.Dark
@@ -129,9 +127,9 @@ ApplicationWindow{
             text: qsTr("Remember Me?")
             font.pixelSize: 12
             display: AbstractButton.TextOnly
-            anchors.top: rectangle3.bottom
+            anchors.top: rectangle_passord.bottom
             anchors.topMargin: 8
-            anchors.left: rectangle3.left
+            anchors.left: rectangle_passord.left
             anchors.leftMargin: 0
             Material.foreground: "#728ad7"
             tristate: false
@@ -139,44 +137,42 @@ ApplicationWindow{
         }
 
         ItemDelegate {
-            id: text1
+            id: forgetPassword
             height: 32
-            //color: "#45b482"
             text: qsTr("Forgot my password?")
             font.underline: true
             font.bold: true
-            //horizontalAlignment: Text.AlignRight
-            //verticalAlignment: Text.AlignVCenter
-            anchors.top: rectangle3.bottom
+            anchors.top: rectangle_passord.bottom
             anchors.topMargin: 8
-            anchors.right: rectangle3.right
+            anchors.right: rectangle_passord.right
             anchors.rightMargin: -12
             font.pixelSize: 12
             Material.foreground: "#45b482"
             onClicked: {
-                onLinkActivated: Qt.openUrlExternally("www.google.fr")
+                onLinkActivated: Qt.openUrlExternally("")
                 drawer.close()
             }
             
         }
 
        RoundButton {
-            id: button
+            id: button_login
             x: 293
             width: 97
             height: 48
             text: qsTr("Login")
             autoRepeat: false
             Material.background: "#45b482"
-            anchors.right: rectangle3.right
+            anchors.right: rectangle_passord.right
             anchors.rightMargin: 0
-            anchors.top: text1.bottom
+            anchors.top: forgetPassword.bottom
             anchors.topMargin: 6
             radius: 8
             onClicked: {
+
+
                 stack.push("HomePage.qml")
             }
-
        }
     }
 
@@ -184,7 +180,7 @@ ApplicationWindow{
            id: stack
            anchors.fill: parent
            focus:true
-           initialItem: item1
+           initialItem: item_login
 
            Keys.onBackPressed:{
                if(stack.depth>1){
