@@ -13,7 +13,7 @@ Item {
             left: parent.left
             top : parent.top
         }
-        anchors.topMargin : 10
+        anchors.topMargin : 5
         anchors.leftMargin: 20
     }
 
@@ -22,6 +22,7 @@ Item {
         text : name_sender
         color:  "#45b582"
 
+      font.pointSize: 15
         anchors {
             left: avatar.right; right: parent.right
             top : parent.top
@@ -33,7 +34,7 @@ Item {
         id : text_date
         text : date_send
         color: "#4d597e"
-        font.pointSize: 6
+        font.pointSize: 9
         anchors {
             left: avatar.right; right: parent.right
             top : text_sender.bottom
@@ -45,7 +46,7 @@ Item {
         id : message_sender
         text : message
         wrapMode: Text.WordWrap
-
+         font.pointSize: 13
         width: parent.width
         color : "#ebebec"
         anchors {
@@ -57,9 +58,9 @@ Item {
     }
 
     Rectangle{
-        width: parent.parent.width
+        width: screen.width
         height: 2
-        color: "#728ad7"
+        color: "#363a3f"
 
         anchors {
             top : message_sender.bottom

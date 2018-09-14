@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 
 Item {
     ToolButton {
@@ -21,6 +22,7 @@ Item {
         anchors.leftMargin: 5
         anchors.right : emoticon.left
         anchors.rightMargin: 5
+        Material.accent: "#45b482"
     }
 
     ToolButton {

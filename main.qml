@@ -37,11 +37,30 @@ ApplicationWindow {
 
         }*/
 
-        Message {
-            y :40
-            name_sender: "Chakib"
-            message: "ssssssssssssssss"
+
+        ColumnLayout{
+            id:layout
+            spacing: 0
+            anchors.fill: parent
+            Message {
+                id : mes
+                name_sender: "Chakib"
+                message: "sssssssssssssssssssssssssssssssssssssssssssss"
+
+            }
+
+            Message {
+                y:100
+                name_sender: "Chakib"
+                message: "ssssssssssssssss"
+            }
+            Message {
+                y: 200
+                name_sender: "Chakib"
+                message: "ssssssssssssssss"
+            }
         }
+
 
     footer: ToolBar  {
         id : footer
