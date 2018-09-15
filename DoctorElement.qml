@@ -9,10 +9,21 @@ Item {
     property string status: "Available"
     property string name: "walid"
     property string speciality: "Counsellor"
-    property string description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+    property string description_doctor: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+    property string priceDa : "2000"
 
-    height : 200
-    //Layout.fillWidth: true
+    height : 220
+
+
+    function statusDoctor() {
+        if(status=="Available"){
+            return "#45b582";
+        } else if(status=="Busy"){
+            return "#e2ec25";
+        } else if(status=="Disconnected"){
+            return "#adada9";
+        }
+    }
 
     Layout.topMargin: 25
     Layout.leftMargin: 30
@@ -25,7 +36,7 @@ Item {
         id: rectangle
         color: "#1d2125"
         radius: 6
-        height: 200
+        height: parent.height
         width : parent.width
 
         Image {
@@ -39,17 +50,18 @@ Item {
             source: "icon/user-white.png"
 
             Rectangle {
-                id: rectangle1
-                x: 55
-                y: 52
+                id: status_doctor
+                x: 39
+                y: 36
                 width: 23
                 height: 23
-                color: "#45b582"
+
+                color: statusDoctor()
                 radius: 10
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 5
+                anchors.bottomMargin: 1
                 anchors.right: parent.right
-                anchors.rightMargin: 2
+                anchors.rightMargin: -2
             }
         }
 
@@ -98,7 +110,7 @@ Item {
             spacing: 0
 
             Image {
-                id: image1
+                id: star1
                 width: 24
                 height: 24
                 Layout.preferredHeight: 20
@@ -108,7 +120,7 @@ Item {
             }
 
             Image {
-                id: image2
+                id: star2
                 width: 24
                 height: 24
                 Layout.preferredHeight: 20
@@ -118,7 +130,7 @@ Item {
             }
 
             Image {
-                id: image3
+                id: star3
                 width: 24
                 height: 24
                 Layout.preferredHeight: 20
@@ -128,7 +140,7 @@ Item {
             }
 
             Image {
-                id: image4
+                id: star4
                 width: 24
                 height: 24
                 Layout.preferredHeight: 20
@@ -138,7 +150,7 @@ Item {
             }
 
             Image {
-                id: image5
+                id: star5
                 width: 24
                 height: 24
                 Layout.preferredHeight: 20
@@ -150,10 +162,9 @@ Item {
 
         Text {
             id: description
+            height: 61
             color: "#ffffff"
-            text: qsTr("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris")
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 20
+            text: qsTr(description_doctor)
             anchors.right: parent.right
             anchors.rightMargin: 20
             anchors.left: image.left
@@ -168,23 +179,84 @@ Item {
         }
 
         ToolButton {
-            id: toolButton
-            x: 582
+            id: button_calendar
+
             width: 30
             height: 30
             text: qsTr("Tool Button")
-            anchors.right: description.right
-            anchors.rightMargin: 8
-            anchors.top: doctorName.top
-            anchors.topMargin: 6
+            anchors.top: description.bottom
+            anchors.topMargin: 0
+            anchors.right: parent.right
+            anchors.rightMargin:15
+
             display: AbstractButton.IconOnly
 
             Image {
-                id: image6
+                id: image_calendar
                 anchors.fill: parent
                 source: "icon/add-event.png"
             }
         }
+
+        ToolButton {
+            id: button_messenger
+
+            width: 30
+            height: 30
+            anchors.right: button_calendar.left
+            anchors.rightMargin: 20
+            anchors.top: description.bottom
+            anchors.topMargin: 0
+
+            display: AbstractButton.IconOnly
+            onClicked: {
+                //stacking.signalStack("")
+            }
+
+
+            Image {
+                id: image_messenger
+                anchors.fill: parent
+                source: "icon/messenger.png"
+            }
+        }
+
+
+        Label {
+            id: price
+            x: 539
+            width: 54
+            height: 33
+            color: "#728ad7"
+            fontSizeMode: Text.Fit
+            text: qsTr(priceDa + " Da/H")
+            font.bold: true
+            anchors.right: description.right
+            anchors.rightMargin: 0
+            anchors.top: doctorName.top
+            anchors.topMargin: 0
+            lineHeight: 1.5
+            verticalAlignment: Text.AlignTop
+            horizontalAlignment: Text.AlignRight
+        }
+
+
+
+            Image {
+                width: 30
+                height: 30
+                anchors.left: description.left
+                anchors.leftMargin: 0
+                anchors.topMargin: 0
+
+                anchors.top: description.bottom
+                id: image_anonymous
+
+                source: "icon/anonymous.png"
+            }
+
+
+
     }
 
 }

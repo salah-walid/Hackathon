@@ -21,22 +21,26 @@ ApplicationWindow{
     Item {
         id: item_login
         height: 429
+        anchors.verticalCenterOffset: -96
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
         anchors.leftMargin: 0
 
-        Text {
+        Image {
             id: text3
             x: 133
-            text: qsTr("We Care! ")
+            width: 200
+            height: 200
+            source: "icon/logo.png"
+
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
             anchors.topMargin: 40
-            font.family: "Footlight MT Light"
+
             Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
-            font.pixelSize: 35
+
         }
 
         Rectangle {
@@ -169,9 +173,8 @@ ApplicationWindow{
             anchors.topMargin: 6
             radius: 8
             onClicked: {
-
-
-                stack.push("HomePage.qml")
+                if(username.text == "zadmin" && password.text == "zadmin")
+                    stack.push("HomePage.qml")
             }
        }
     }
@@ -185,7 +188,6 @@ ApplicationWindow{
            Keys.onBackPressed:{
                if(stack.depth>1){
                    pop()
-                   labelToolBar.text =qsTr("Main");
                }else{
                    Qt.quit()
                }

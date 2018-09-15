@@ -16,5 +16,8 @@
         <file alias="starU.png">icon/starU.png</file>
         <file alias="user-white.png">icon/user-white.png</file>
         <file alias="add-event.png">icon/add-event.png</file>
+        <file alias="anonymous.png">icon/anonymous.png</file>
+        <file alias="messenger.png">icon/messenger.png</file>
+        <file alias="logo.png">icon/logo.png</file>
     </qresource>
 </RCC>

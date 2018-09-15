@@ -5,19 +5,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.1
 
 Page {
-    /*header : ToolBar {
-        id : header
-        Material.background: "#1d2125"
-        topPadding: 15
-        leftPadding: 12
-        height : 60
 
-        LoginHeader {
-            anchors.left: parent.left
-            anchors.right: parent.right
-        }
-    }
-    */
     Drawer {
         id: drawer
         width: root.width * 0.66
@@ -112,8 +100,8 @@ Page {
         anchors.left: parent.left
 
         ScrollBar.vertical: ScrollBar {
-             policy: ScrollBar.AlwaysOff
-         }
+            policy: ScrollBar.AlwaysOff
+        }
 
         ColumnLayout {
             id: columnLayout
@@ -121,16 +109,30 @@ Page {
             spacing: 3
             anchors.fill: parent
 
-            Repeater{
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
-                model : 10
-                DoctorElement{
-
-                }
-
+            DoctorElement{
+                name: "yacine"
+                status: "Available"
             }
+            DoctorElement{
+                name: "walid"
+                status: "Busy"
+                priceDa: "1500"
+            }
+
+            DoctorElement{
+                name: "younes"
+                status: "Disconnected"
+                priceDa : "1000"
+            }
+
+            DoctorElement{
+                name: "chakib"
+                status: "Available"
+                priceDa: "10000"
+            }
+
+
         }
     }
 }

@@ -4,16 +4,14 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.1
 
-
 ApplicationWindow {
-
     id :root
     visible: true
     width: 480
     height: 720
-    title: qsTr("Chkili")
+    title: qsTr("We care")
+
     property string pseudo: "Yacine"
-    minimumWidth : 480
 
     header : ToolBar {
         id : header
@@ -33,24 +31,19 @@ ApplicationWindow {
 
     Drawer {
         id: drawer
-        width: root.width * 0.66
-        height: root.height
+        width: parent.width * 0.66
+        height: parent.height
     }
 
-    function nameSenderMessage () {
-        if(have_send_receiver) {
-            return  pseudo_receiver
-        } else {
-            return pseudo
-        }
-    }
 
     ScrollView{
         id : msgArea
-        anchors.fill  : parent
+        contentWidth: root.width
+        //anchors.fill  : parent
         ColumnLayout{
-
+            width: parent.width
             Repeater{
+                width: parent.width
                 model : listModel
                 Message {
                     id : message

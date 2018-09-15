@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>chat.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>MyFooter.qml</file>
         <file>MyHeader.qml</file>
