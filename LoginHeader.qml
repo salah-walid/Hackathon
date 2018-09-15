@@ -21,5 +21,10 @@ Item {
         }
         id: menuButton
     }
+    Drawer {
+        id: drawer
+        width: root.width * 0.66
+        height: root.height
+    }
 
 }

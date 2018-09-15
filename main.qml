@@ -12,8 +12,7 @@ ApplicationWindow {
     width: 480
     height: 720
     title: qsTr("Chkili")
-    //maximumWidth: 600
-    //maximumHeight: 720
+
     minimumWidth : 480
 
     header : ToolBar {
