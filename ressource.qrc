@@ -8,5 +8,7 @@
         <file alias="avatar.png">icon/avatar.png</file>
         <file alias="call-answer.png">icon/call-answer.png</file>
         <file alias="video-camera.png">icon/video-camera.png</file>
+        <file alias="padlock.png">icon/padlock.png</file>
+        <file alias="user.png">icon/user.png</file>
     </qresource>
 </RCC>
