@@ -8,5 +8,16 @@
         <file alias="avatar.png">icon/avatar.png</file>
         <file alias="call-answer.png">icon/call-answer.png</file>
         <file alias="video-camera.png">icon/video-camera.png</file>
+        <file alias="padlock.png">icon/padlock.png</file>
+        <file alias="user.png">icon/user.png</file>
+        <file alias="magnifying-glass-icon.png">icon/magnifying-glass-icon.png</file>
+        <file alias="sort-by-attributes.png">icon/sort-by-attributes.png</file>
+        <file alias="star.png">icon/star.png</file>
+        <file alias="starU.png">icon/starU.png</file>
+        <file alias="user-white.png">icon/user-white.png</file>
+        <file alias="add-event.png">icon/add-event.png</file>
+        <file alias="anonymous.png">icon/anonymous.png</file>
+        <file alias="messenger.png">icon/messenger.png</file>
+        <file alias="logo.png">icon/logo.png</file>
     </qresource>
 </RCC>

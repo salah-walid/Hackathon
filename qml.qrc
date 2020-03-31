@@ -1,10 +1,15 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>chat.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>MyFooter.qml</file>
         <file>MyHeader.qml</file>
         <file>Avatar.qml</file>
         <file>Message.qml</file>
+        <file>Login.qml</file>
+        <file>LoginHeader.qml</file>
+        <file>WebSocket.qml</file>
+        <file>DoctorElement.qml</file>
+        <file>HomePage.qml</file>
     </qresource>
 </RCC>
